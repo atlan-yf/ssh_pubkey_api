@@ -15,4 +15,4 @@ def addPubKey(pubKey: str):
     import os
     # Open the file and append the public key
     with open(os.path.expanduser('~/.ssh/authorized_keys'), 'a') as f:
-        f.write('\n' + pubKey + '\n')
+        f.write(pubKey + '\n')
