@@ -1,8 +1,9 @@
 from flask import Flask, request, current_app
 from urllib.parse import quote
+import os
 
 from util import verifyPubKey, addPubKey
-from notifier import Notifier
+from notifier import NotifierManager
 from checker import Checker
 
 app = Flask(__name__)
@@ -34,6 +35,8 @@ def verify(code):
 
 if __name__ == '__main__':
     with app.app_context():
-        app.notifier = Notifier('config.json')
+        if not os.path.isfile('pubkey.config'):
+            raise FileNotFoundError('pubkey.config not found')
+        app.notifier = NotifierManager('pubkey.config')
         app.checker = Checker()
     app.run(host='0.0.0.0', port=18581)

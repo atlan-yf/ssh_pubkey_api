@@ -4,7 +4,8 @@ An HTTP API that allows for securely adding a new SSH public key to "~/.ssh/auth
 
 # recommanded conda environment
 
-python 3.11
-pip install flask=3.0.3
-pip install pyotp=2.9.0
-pip install cryptography=43.0.1
+python 3.11 <br/>
+pip install flask=3.0.3 <br/>
+pip install pyotp=2.9.0 <br/>
+pip install cryptography=43.0.1 <br/>
+pip install requests=2.32.3 <br/>
